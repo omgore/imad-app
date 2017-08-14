@@ -17,6 +17,14 @@ app.get('/article-one', function (req, res) {
   res.send("This is article one");
 });
 
+app.get('/article-two', function (req, res) {
+  res.send("This is article two");
+});
+
+app.get('/article-three', function (req, res) {
+  res.send("This is article three");
+});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
