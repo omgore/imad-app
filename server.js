@@ -5,11 +5,12 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne ={
-    title: 'Article One | Om Gore',
-    heading: 'Article One',
-    date: '14 aug 2017',
-    content: `<p>
+var articles= {
+    'article-one': {
+            title: 'Article One | Om Gore',
+            heading: 'Article One',
+            date: '14 aug 2017',
+            content: `<p>
                 This is my first html. And This is my first article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll.......
             </p>
             <p>
@@ -18,6 +19,25 @@ var articleOne ={
             <p>
                 This is my first html. And This is my first article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll.......
             </p>`
+    },
+    'article-two': {
+        title: 'Article Two | Om Gore',
+        heading: 'Article Two',
+        date: '15 aug 2017',
+        content: `<p>
+                This is my second html. And This is my second article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll.......
+            </p>
+            `
+    },
+    'article-three': {
+        title: 'Article three | Om Gore',
+        heading: 'Article Three',
+        date: '15 aug 2017',
+        content: `<p>
+                This is my third html. And This is my third article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll....... This is my first html. And This is my first article...... Feeling Coooooooollll.......
+            </p>
+            `
+    }
 };
 
 function createTemplate(data)
@@ -69,16 +89,19 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/article-one', function (req, res) {
- res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[artilceName]));
 });
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[artilceName]));
 });
 
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName', function (req, res) {
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[artilceName]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
