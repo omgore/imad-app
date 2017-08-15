@@ -5,7 +5,7 @@
     </head>
     <body>
         <div class="center">
-            <img id='madi' src="/ui/madi.png" class="img-medium"/>
+            <img id='madi' src="/ui/madi.png" class="img-medium" onclick="myImgfunction()"/>
         </div>
         <br>
         <div id='main-text' class="center text-big bold">
@@ -15,6 +15,11 @@
         </div>
         <script>
             alert('HI, I am JavaScript');
+            
+         myImgfunction () {
+            console.log('in on click funtion of image madi');
+            img.style.marginLeft = '100 px';  
+         };
         </script>
         <script type="text/javascript" src="/ui/main.js">
         </script>
