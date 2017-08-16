@@ -42,7 +42,6 @@ var articles= {
 
 function createTemplate(data)
 {
-    consosle.log(data);
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
@@ -91,9 +90,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
-    
     var articleName = req.params.articleName;
-    console.log(articleName);
     res.send(createTemplate(articles[articleName]));
 });
 
