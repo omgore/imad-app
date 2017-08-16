@@ -42,6 +42,7 @@ var articles= {
 
 function createTemplate(data)
 {
+    consosle.log(data);
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
