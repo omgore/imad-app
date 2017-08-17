@@ -12,16 +12,29 @@ console.log('Loaded!');
 
 
 //counter code
-var counter = 0;
 var button = document.getElementById('counter');
 button.onclick = function () {
-  //make request to counter endpoint
+  //create request
+  var request = new XMLHttpRequest();
   
   //capture the respnse and store to variable
+  request.onreadystatechange = function() {
+    if(request.readyState == XMLHttpRequest.done)
+    {
+        //take some action
+        if(request.status == 200)
+        {
+            var counter = request.responseText;
+            var span = document.getElementById('count');
+            span.innerHTML = counter.toString();
+        }
+        //not done yet
+    }
+  };
   
-  //render the variable to span
+  //make request to counter endpoint
   
-  counter = counter + 1;
-  var span = document.getElementById('count');
-  span.innerHTML = counter.toString();
+  request.open('GET','http://omgore2.imad.hasura-app.io/counter', true);
+  request.send(null);
+
 };
