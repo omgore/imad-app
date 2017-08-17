@@ -1,11 +1,11 @@
 console.log('Loaded!');
 
-var element = document.getElementById('main-text');
-element.innerHTML = 'New value';
+// var element = document.getElementById('main-text');
+// element.innerHTML = 'New value';
 
-//move image madi
-var img = document.getElementById('madi');
-img.onclick =  function () {
-    console.log('in on click funtion of image madi');
-    img.style.marginLeft = '100 px';  
-};
+// //move image madi
+// var img = document.getElementById('madi');
+// img.onclick =  function () {
+//     console.log('in on click funtion of image madi');
+//     img.style.marginLeft = '100 px';  
+// };
