@@ -39,8 +39,6 @@ button.onclick = function () {
 
 };
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
 
 var submit = document.getElementById('submit');
 submit.onclick = function () {
@@ -72,7 +70,8 @@ submit.onclick = function () {
   };
   
   //make request to counter endpoint
-  
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
   request.open('GET','http://omgore2.imad.hasura-app.io/submit-name?name=' + name, true);
   request.send(null);
   
