@@ -8,7 +8,8 @@ var config = {
     database  : 'omgore2',
     host : 'db.imad.hasura-app.io',
     port : '5432',
-    password : 'db-omgore2-27175'
+    password: process.env.DB_PASSWORD
+    //'db-omgore2-27175'
 };
 
 var app = express();
